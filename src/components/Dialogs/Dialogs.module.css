@@ -1,0 +1,47 @@
+
+
+.dialogs {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    padding: 10px;
+}
+
+/* .dialogItem {
+   
+}
+
+.messages {
+
+}  */
+
+
+
+  .textOfMessage {
+    color: rgb(58, 57, 56);
+  }
+
+
+
+
+  
+
+
+/* 
+.dialogs {
+    display: grid;
+    grid-template-areas: 'dialogItem messages';
+    padding: 10px;
+}
+
+.dialogItem {
+    grid-area: dialogItem;
+}
+
+.messages {
+    grid-area: messages;
+} */
+
+
+
+
+

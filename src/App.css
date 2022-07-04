@@ -1,0 +1,16 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows:  50px 1fr;
+  grid-template-areas: 
+  'h h'
+  'n c';
+  grid-gap: 10px;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.contentStyles {
+    grid-area: c;
+    background-color: #8FC4A6;
+}
