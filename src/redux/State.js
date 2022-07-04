@@ -4,7 +4,7 @@ import rerenderEntireTree from './../render';
 const state = {
     messagesPage: {
         dialogData: [
-            {userName: 'Ilya', id :'1', avatar: 'https://allopicasso.ru/wa-data/public/shop/products/04/68/6804/images/35758/35758.750x0.jpg'},
+            {userName: 'Ilya', id :'1', avatar: ''},
             {userName: 'Sasha', id :'2', avatar: 'https://pic.rutubelist.ru/user/45/51/45512889626af0102442ec4cec35ab73.jpg'},
             {userName: 'Masha', id :'3', avatar:'https://cs1.livemaster.ru/storage/a0/46/5fb17d2a7013ea58f606bbc014b7--kartiny-i-panno-kartina-portret-lis-dzhentelmen-lis-v-ochkah.jpg'},
             {userName: 'Victor', id :'4', avatar:'https://www.ukazka.ru/img/g/uk870877.jpg'},
