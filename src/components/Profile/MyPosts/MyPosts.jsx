@@ -1,6 +1,9 @@
 import styles from './MyPosts.module.css'
 import OnePost from './OnePost/OnePost';
 import { useRef } from 'react';
+import addPostActionCreator from './../../../redux/addPostActionCreator';
+import onPostChangeActionCreator from './../../../redux/onPostChangeActionCreator';
+
 
 const MyPosts = (props) => {
 
@@ -9,20 +12,20 @@ const MyPosts = (props) => {
   let newPostElement = useRef()
 
     let addNewPost = function () {
-     props.addPost()
+     props.dispatch(addPostActionCreator())
     }
 
     let onPostChange = function () {
       let text = newPostElement.current.value
-      props.updateNewPostText(text)
-      
+      props.dispatch(onPostChangeActionCreator(text))
+       
     }
  
     return (
       <div className={styles.postBlock}>
         <div className={styles.clearfix}></div>
         <h3>My posts</h3>
-        <div>
+        <div className= {styles.textarea}>
           <textarea placeholder='My posts...' ref={newPostElement} value = {props.newPostText} onChange={onPostChange}/>
         </div>
         <div> 

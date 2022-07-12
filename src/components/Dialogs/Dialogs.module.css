@@ -20,8 +20,9 @@
     color: rgb(58, 57, 56);
   }
 
-div textarea {
+ .textarea {
   width: 625px;
+  height: 70px;
 }
 
 

@@ -1,3 +1,7 @@
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+const SEND_MESSAGE = 'SEND-MESSAGE'
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
 
 const store = {
   _state: {
@@ -19,6 +23,8 @@ const store = {
                 {text: 'I miss u too', id :'5'},
                 {text: 'Play with me', id :'6'}
             ],
+
+            newMessageText: '',
         },
     
         
@@ -41,27 +47,52 @@ const store = {
     return this._state;
   },
 
-  addPost() {
-    let newPost = {
-      id: 5, 
-      text: this._state.profilePage.newPostText, 
-      likesCount: 0
-    }
+  // addPost() {
+  //   let newPost = {
+  //     id: 5, 
+  //     text: this._state.profilePage.newPostText, 
+  //     likesCount: 0
+  //   }
   
-    this._state.profilePage.postData.push(newPost)
-    this._state.profilePage.newPostText = ''
-    this._rerenderEntireTreeInState(this._state)
-  },
+  //   this._state.profilePage.postData.push(newPost)
+  //   this._state.profilePage.newPostText = ''
+  //   this._rerenderEntireTreeInState(this._state)
+  // },
   
-   updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText 
-    this._rerenderEntireTreeInState(this._state)
-  },
+  //  updateNewPostText(newText) {
+  //   this._state.profilePage.newPostText = newText 
+  //   this._rerenderEntireTreeInState(this._state)
+  // },
   
   subscribe(observer) {
     this._rerenderEntireTreeInState = observer;
   },
 
+  dispatch(action) {
+    if (action.type ===  ADD_POST) {
+      let newPost = {
+        id: 5, 
+        text: this._state.profilePage.newPostText, 
+        likesCount: 0
+      }
+      this._state.profilePage.postData.push(newPost)
+      this._state.profilePage.newPostText = ''
+      this._rerenderEntireTreeInState(this._state)
+
+    } else if (action.type === UPDATE_NEW_POST_TEXT) {
+      this._state.profilePage.newPostText = action.newText 
+      this._rerenderEntireTreeInState(this._state)
+
+    } else if (action.type === SEND_MESSAGE) {
+      this._state.messagesPage.messageData.push({text: this._state.messagesPage.newMessageText, id: 7})
+      this._state.messagesPage.newMessageText = ''
+      this._rerenderEntireTreeInState(this._state)
+
+    }else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+      this._state.messagesPage.newMessageText = action.newMessage
+      this._rerenderEntireTreeInState(this._state)
+    }
+  },
 }
 
 export default store;

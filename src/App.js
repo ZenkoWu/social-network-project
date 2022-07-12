@@ -17,8 +17,8 @@ function App(props) {
      <NavBar/>
      <div className='contentStyles'> 
      <Routes>
-     <Route path="/dialogs/*" element = {<Dialogs dialogData = {props.state.messagesPage.dialogData} messageData = {props.state.messagesPage.messageData}/>}/>
-      <Route path="/profile" element = {<Profile postData = {props.state.profilePage.postData} addPost = {props.addPost} newPostText = {props.state.profilePage.newPostText} updateNewPostText = {props.updateNewPostText}/>}/>
+     <Route path="/dialogs/*" element = {<Dialogs dialogData = {props.state.messagesPage.dialogData} messageData = {props.state.messagesPage.messageData} dispatch = {props.dispatch} newMessageText = {props.state.messagesPage.newMessageText}/>}/>
+      <Route path="/profile" element = {<Profile postData = {props.state.profilePage.postData} dispatch = {props.dispatch} newPostText = {props.state.profilePage.newPostText}/>}/>
       <Route path="/news" element = {<News/>}/>
       <Route path="/music" element = {<Music/>}/>
       <Route path="/settings" element = {<Settings/>}/>
