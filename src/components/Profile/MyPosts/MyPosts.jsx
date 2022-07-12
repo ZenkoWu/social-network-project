@@ -1,9 +1,7 @@
 import styles from './MyPosts.module.css'
 import OnePost from './OnePost/OnePost';
 import { useRef } from 'react';
-import addPostActionCreator from './../../../redux/addPostActionCreator';
-import onPostChangeActionCreator from './../../../redux/onPostChangeActionCreator';
-
+import { addPostActionCreator, onPostChangeActionCreator } from '../../../redux/ProfileReducer';
 
 const MyPosts = (props) => {
 
