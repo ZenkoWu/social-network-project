@@ -6,10 +6,10 @@ const DialogItem = (props) => {
 
   let avatarOfFriend;
   if (props.avatar == '') {
-    avatarOfFriend = 'https://yt3.ggpht.com/a/AGF-l7_Leowr6J7oL2yRm0AdVF4qKOFbfUGGpAhFXA=s900-c-k-c0xffffffff-no-rj-mo'
+    avatarOfFriend = 'file:///C:/progy/01/git/social-network-project/src/img/avatarOfUserDefault.png'
   } else {
     avatarOfFriend = props.avatar
-  }
+  } 
 
 
   return (

@@ -19,7 +19,7 @@ function App(props) {
      <div className='contentStyles'> 
      <Routes>
      <Route path="/dialogs/*" element = {<Dialogs dialogData = {props.state.messagesPage.dialogData} messageData = {props.state.messagesPage.messageData}/>}/>
-      <Route path="/profile" element = {<Profile postData = {props.state.profilePage.postData} addPost = {props.addPost}/>}/>
+      <Route path="/profile" element = {<Profile postData = {props.state.profilePage.postData} addPost = {props.addPost} newPostText = {props.state.profilePage.newPostText} updateNewPostText = {props.updateNewPostText}/>}/>
       <Route path="/news" element = {<News/>}/>
       <Route path="/music" element = {<Music/>}/>
       <Route path="/settings" element = {<Settings/>}/>

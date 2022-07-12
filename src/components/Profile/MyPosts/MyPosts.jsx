@@ -6,23 +6,27 @@ const MyPosts = (props) => {
 
   let postElement = props.postData.map(post => <OnePost text = {post.text} likesCount = {post.likesCount}/> )
   
-  
-  let newPostElement =useRef() 
+  let newPostElement = useRef()
 
-  let addPost= function () {
-    let text = newPostElement.current.value
-    props.addPost(text)
+    let addNewPost = function () {
+     props.addPost()
+    }
 
-  }
+    let onPostChange = function () {
+      let text = newPostElement.current.value
+      props.updateNewPostText(text)
+      
+    }
+ 
     return (
       <div className={styles.postBlock}>
         <div className={styles.clearfix}></div>
         <h3>My posts</h3>
         <div>
-          <textarea placeholder='My posts...' ref = {newPostElement}></textarea>
+          <textarea placeholder='My posts...' ref={newPostElement} value = {props.newPostText} onChange={onPostChange}/>
         </div>
         <div> 
-          <button onClick={addPost}>Add Post</button>
+          <button onClick={addNewPost}>Add Post</button>
           </div>
           {postElement}
   

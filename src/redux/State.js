@@ -1,6 +1,4 @@
-
-import rerenderEntireTree from './../render';
-
+let rerenderEntireTreeInState;
 const state = {
     messagesPage: {
         dialogData: [
@@ -10,7 +8,7 @@ const state = {
             {userName: 'Victor', id :'4', avatar:'https://www.ukazka.ru/img/g/uk870877.jpg'},
             {userName: 'Gabri', id :'5', avatar:'https://allopicasso.ru/wa-data/public/shop/products/04/68/6804/images/35758/35758.750x0.jpg'},
             {userName: 'Ivan', id :'6', avatar: 'https://www.ukazka.ru/img/g/uk870877.jpg' }
-        ],
+        ], 
     
         messageData: [
             {text: 'Hello', id :'1'},
@@ -30,21 +28,35 @@ const state = {
             {id: 3, text: 'happiness', likesCount: '876'},
             {id: 4, text: 'tell', likesCount: '234'},
         ],
+        newPostText: ''
         
     },
     
     }
   
 
-   export const addPost = function (postMessage) {
-    let newPost = {
-        id: 5,
-        text: postMessage,
-        likesCount: 0
-    }
-        state.profilePage.postData.push(newPost)
-    }
 
-rerenderEntireTree()
+export const addPost = function() {
+  let newPost = {
+    id: 5, 
+    text: state.profilePage.newPostText, 
+    likesCount: 0
+  }
+
+  state.profilePage.postData.push(newPost)
+  state.profilePage.newPostText = ''
+  rerenderEntireTreeInState(state)
+
+}
+
+export const updateNewPostText = function (newText) {
+    state.profilePage.newPostText = newText 
+    rerenderEntireTreeInState(state)
+    
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTreeInState = observer;
+}
 
 export default state;

@@ -1,6 +1,7 @@
 import styles from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem';
 import Message from './MessageOfUser/Message';
+import { useRef } from 'react';
 
 
 const Dialogs = (props) => {
@@ -9,7 +10,12 @@ const Dialogs = (props) => {
 
   let messageElements = props.messageData.map(item => <Message text = {item.text} id ={item.id}/>)
 
+  let newMessageElement = useRef()
 
+  let sendMessage = function () {
+    let text = newMessageElement.current.value
+    alert(text)
+  } 
   return (
   
     <div className= {styles.dialogs}>
@@ -18,7 +24,10 @@ const Dialogs = (props) => {
       </div>
       <div className={styles.messages}>
         {messageElements}
+        <div><textarea placeholder='Enter text...' ref={newMessageElement}></textarea></div>
+        <div><button onClick={sendMessage}>Send message</button></div>
       </div>
+      
     </div>
   )
 }
