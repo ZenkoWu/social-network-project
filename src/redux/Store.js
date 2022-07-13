@@ -1,10 +1,10 @@
 import ProfileReducer from "./ProfileReducer"
 import DialogReducer from './DialogReducer';
 
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const SEND_MESSAGE = 'SEND-MESSAGE'
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
+// const ADD_POST = 'ADD-POST'
+// const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+// const SEND_MESSAGE = 'SEND-MESSAGE'
+// const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
 
 const store = {
   _state: {
