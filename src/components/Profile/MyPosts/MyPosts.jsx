@@ -1,7 +1,6 @@
 import styles from './MyPosts.module.css'
 import OnePost from './OnePost/OnePost';
 import { useRef } from 'react';
-import { addPostActionCreator, onPostChangeActionCreator } from '../../../redux/ProfileReducer';
 
 const MyPosts = (props) => {
 
@@ -10,14 +9,12 @@ const MyPosts = (props) => {
   let newPostElement = useRef()
 
     let onAddPost = function () {
-    //  props.dispatch(addPostActionCreator())
      props.addPost()
     }
 
     let onPostChange = function () {
       let text = newPostElement.current.value
       props.updateNewPostText(text)
-      // props.dispatch(onPostChangeActionCreator(text))
        
     }
  
