@@ -24,16 +24,22 @@ messageData: [
 newMessageText: '',
 }
 const DialogReducer = (state = initialState, action) => {
-    if (action.type === SEND_MESSAGE) {
-        state.messageData.push({text: state.newMessageText, id: 7})
-        state.newMessageText = ''
-     
-  
-      } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-        state.newMessageText = action.newMessage
-      
+
+    let stateCopy = {...state}
+
+
+    if ( action.type === UPDATE_NEW_MESSAGE_BODY) {
+      stateCopy.newMessageText = action.newMessage
     }
-    return state
+
+    else if (action.type === SEND_MESSAGE) {
+      
+     stateCopy.messageData = [...state.messageData] 
+     stateCopy.messageData.push({text: state.newMessageText, id: 7})
+     stateCopy.newMessageText = ''
+     
+    } 
+    return stateCopy;
 }
 
 export const sendMessageCreator = () => {

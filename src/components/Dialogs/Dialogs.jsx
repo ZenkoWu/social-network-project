@@ -7,9 +7,9 @@ import { onChangeMessageCreator, sendMessageCreator } from '../../redux/DialogRe
 
 const Dialogs = (props) => {
  
-  let dialogElements = props.dialogData.map(item => <DialogItem userName = {item.userName} id ={item.id} avatar = {item.avatar}/> )
+  let dialogElements = props.dialogData.map(item => <DialogItem userName = {item.userName} id ={item.id} key = {item.id} avatar = {item.avatar}/> )
 
-  let messageElements = props.messageData.map(item => <Message text = {item.text} id ={item.id}/>)
+  let messageElements = props.messageData.map(item => <Message text = {item.text} id ={item.id} key = {item.id}/>)
 
   let newMessageElement = useRef()
 

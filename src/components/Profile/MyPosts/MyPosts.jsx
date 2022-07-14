@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 const MyPosts = (props) => {
 
-  let postElement = props.postData.map(post => <OnePost text = {post.text} likesCount = {post.likesCount}/> )
+  let postElement = props.postData.map(post => <OnePost text = {post.text} key = {post.id} likesCount = {post.likesCount}/> )
   
   let newPostElement = useRef()
 
