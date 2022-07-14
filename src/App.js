@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 function App(props) {
 
@@ -17,8 +18,14 @@ function App(props) {
      <NavBar/>
      <div className='contentStyles'> 
      <Routes>
-     <Route path="/dialogs/*" element = {<Dialogs dialogData = {props.state.messagesPage.dialogData} messageData = {props.state.messagesPage.messageData} dispatch = {props.dispatch} newMessageText = {props.state.messagesPage.newMessageText}/>}/>
-      <Route path="/profile" element = {<Profile postData = {props.state.profilePage.postData} dispatch = {props.dispatch} newPostText = {props.state.profilePage.newPostText}/>}/>
+     <Route path="/dialogs/*" element = {<DialogsContainer store = {props.store}
+    //  dialogData = {props.state.messagesPage.dialogData} 
+    //  messageData = {props.state.messagesPage.messageData} dispatch = {props.dispatch} 
+    //  newMessageText = {props.state.messagesPage.newMessageText}
+     />}/>
+      <Route path="/profile" element = {<Profile store = {props.store}
+      // postData = {props.state.profilePage.postData} dispatch = {props.dispatch} newPostText = {props.state.profilePage.newPostText}
+      />}/>
       <Route path="/news" element = {<News/>}/>
       <Route path="/music" element = {<Music/>}/>
       <Route path="/settings" element = {<Settings/>}/>

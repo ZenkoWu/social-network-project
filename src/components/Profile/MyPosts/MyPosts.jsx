@@ -9,13 +9,15 @@ const MyPosts = (props) => {
   
   let newPostElement = useRef()
 
-    let addNewPost = function () {
-     props.dispatch(addPostActionCreator())
+    let onAddPost = function () {
+    //  props.dispatch(addPostActionCreator())
+     props.addPost()
     }
 
     let onPostChange = function () {
       let text = newPostElement.current.value
-      props.dispatch(onPostChangeActionCreator(text))
+      props.updateNewPostText(text)
+      // props.dispatch(onPostChangeActionCreator(text))
        
     }
  
@@ -27,7 +29,7 @@ const MyPosts = (props) => {
           <textarea placeholder='My posts...' ref={newPostElement} value = {props.newPostText} onChange={onPostChange}/>
         </div>
         <div> 
-          <button onClick={addNewPost}>Add Post</button>
+          <button onClick={onAddPost}>Add Post</button>
           </div>
           {postElement}
   

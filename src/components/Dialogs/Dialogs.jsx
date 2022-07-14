@@ -14,12 +14,14 @@ const Dialogs = (props) => {
   let newMessageElement = useRef()
 
   let sendMessage = function () {
-    props.dispatch(sendMessageCreator())
+    // props.dispatch(sendMessageCreator())
+    props.onSendMessage()
   }  
 
   let onChangeMessage = function() {
     let text = newMessageElement.current.value
-    props.dispatch(onChangeMessageCreator(text))
+    // props.dispatch(onChangeMessageCreator(text))
+    props.onChangeMessage(text)
   }
   return (
   
