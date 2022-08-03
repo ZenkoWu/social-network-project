@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
     messageData: state.messagesPage.messageData,
     newMessageText: state.messagesPage.newMessageText
   }
-}
+} 
 
 const mapDispatchToProps = (dispatch) => {
   return {
