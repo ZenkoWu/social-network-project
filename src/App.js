@@ -1,5 +1,4 @@
 import './App.css';
-import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import News from './components/News/News';
@@ -8,13 +7,14 @@ import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import FindUsersContainer from './components/FindUsers/FindUsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 function App(props) {
 
   return (
     <BrowserRouter>
    <div className='wrapper'> 
-     <Header/> 
+     <HeaderContainer/> 
      <NavBar/>
      <div className='contentStyles'> 
      <Routes>

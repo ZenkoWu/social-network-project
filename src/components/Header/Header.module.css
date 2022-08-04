@@ -7,3 +7,15 @@
     /* .header img {
         height: 40px;
       } */
+
+.loginBlock{
+  display: block;
+  /* margin-left: auto; */
+  float: right;
+  margin-top: 10px;
+  height: 100px;
+	width: 100px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
