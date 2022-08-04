@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import UserImg from '../../img/150-1503945_transparent-user-png-default-user-image-png-png.png';
 import styles from './FindUsers.module.css'
 import User from "./User";
@@ -53,9 +54,11 @@ const FindUsers = (props) => {
       {props.users.map(user => 
         <div>
           <div>
+            <NavLink to={'/profile/' + user.id}>
             <img src={user.photos.large? user.photos.large: UserImg }
             // className={styles.userImg} 
             style={{width: '120px'}}/>
+            </NavLink>
             <div> 
               {user.followed ? 
               <button onClick={() => props.unfollow(user.id)}>Unfollow</button> 

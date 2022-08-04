@@ -1,10 +1,11 @@
 
 import { connect } from 'react-redux';
-import { followActionCreator, setCurrentPageActionCreator, setTotalUsersCountAC, setUsersActionCreator, toggleIsFetchingAC, unfollowActionCreator } from '../../redux/FindUsersReducer';
+import { follow, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetching, unfollow } from '../../redux/FindUsersReducer';
 import FindUsers from './FindUsers';
 import * as axios from "axios";
 import React, { Component } from 'react';
-import preloader from '../../img/Spinner-1s-200px.svg'
+import Preloader from '../Common/Preloader/Preloader';
+
 
 
 class FindUsersAPIContainer extends React.Component {
@@ -28,7 +29,7 @@ class FindUsersAPIContainer extends React.Component {
   render () {
     return (
       <>
-      {this.props.isFetching ? <img src={preloader} style={{width: '100px'}}/> : null}
+      {this.props.isFetching ? <Preloader/> : null}
       <FindUsers totalUserCount={this.props.totalUserCount} 
       pageSize = {this.props.pageSize}
       currentPage = {this.props.currentPage}
@@ -52,19 +53,19 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {dispatch(followActionCreator(userId))},
-        unfollow: (userId) => {dispatch(unfollowActionCreator(userId))},
-        setUsers: (users) => {dispatch(setUsersActionCreator(users))},
-        setCurrentPage:(pageNumber) => {dispatch(setCurrentPageActionCreator(pageNumber))},
-        setTotalUsersCount:(totalCount) => {dispatch(setTotalUsersCountAC(totalCount))},
-        toggleIsFetching: (isFetching) => {dispatch(toggleIsFetchingAC(isFetching))},
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         follow: (userId) => {dispatch(followActionCreator(userId))},
+//         unfollow: (userId) => {dispatch(unfollowActionCreator(userId))},
+//         setUsers: (users) => {dispatch(setUsersActionCreator(users))},
+//         setCurrentPage:(pageNumber) => {dispatch(setCurrentPageActionCreator(pageNumber))},
+//         setTotalUsersCount:(totalCount) => {dispatch(setTotalUsersCountAC(totalCount))},
+//         toggleIsFetching: (isFetching) => {dispatch(toggleIsFetchingAC(isFetching))},
 
 
-    }
-}
+//     }
+// }
 
-const FindUsersContainer = connect(mapStateToProps, mapDispatchToProps)(FindUsersAPIContainer)
+const FindUsersContainer = connect(mapStateToProps, {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching })(FindUsersAPIContainer)
 
 export default FindUsersContainer;
