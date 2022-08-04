@@ -1,11 +1,9 @@
 
 import { connect } from 'react-redux';
-import { follow, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetching, unfollow } from '../../redux/FindUsersReducer';
+import { follow, getUsers, setCurrentPage, setUsers, unfollow } from '../../redux/FindUsersReducer';
 import FindUsers from './FindUsers';
-import * as axios from "axios";
 import React, { Component } from 'react';
 import Preloader from '../Common/Preloader/Preloader';
-import { UsersAPI } from '../../api/API';
 import { toggleFollowingProgress } from './../../redux/FindUsersReducer';
 
 
@@ -13,22 +11,25 @@ import { toggleFollowingProgress } from './../../redux/FindUsersReducer';
 
 class FindUsersAPIContainer extends React.Component {
   componentDidMount() {
-    this.props.toggleIsFetching(true)
-    UsersAPI.getUsers(this.props.currentPage, this.props.pageSize)
-    .then(data => {
-      this.props.toggleIsFetching(false)
-      this.props.setUsers( data.items)
-      this.props.setTotalUsersCount(data.totalCount)
-    })
+    this.props.getUsers(this.props.currentPage, this.props.pageSize)
+    // this.props.toggleIsFetching(true)
+    // UsersAPI.getUsers(this.props.currentPage, this.props.pageSize)
+    // .then(data => {
+    //   this.props.toggleIsFetching(false)
+    //   this.props.setUsers( data.items)
+    //   this.props.setTotalUsersCount(data.totalCount)
+    // })
   }
   
   onPageChange=(pageNumber) => {
-    this.props.setCurrentPage(pageNumber)
-    this.props.toggleIsFetching(true)
-    UsersAPI.getUsers(pageNumber, this.props.pageSize).then(data => {
-      this.props.toggleIsFetching(false)
-    this.props.setUsers(data.items)
-    })
+    this.props.getUsers(pageNumber, this.props.pageSize)
+
+    // this.props.setCurrentPage(pageNumber)
+    // this.props.toggleIsFetching(true)
+    // UsersAPI.getUsers(pageNumber, this.props.pageSize).then(data => {
+    //   this.props.toggleIsFetching(false)
+    // this.props.setUsers(data.items)
+    // })
   }
   render () {
     return (
@@ -41,8 +42,8 @@ class FindUsersAPIContainer extends React.Component {
       users = {this.props.users}
       follow = {this.props.follow}
       unfollow ={this.props.unfollow}
-      toggleFollowingProgress = {this.props.toggleFollowingProgress}
-      followingInProgress = {this.props.followingInProgress}/>
+      followingInProgress = {this.props.followingInProgress}
+      getUsers ={this.props.getUsers}/>
       </>
    );
   }
@@ -73,6 +74,8 @@ const mapStateToProps = (state) => {
 //     }
 // }
 
-const FindUsersContainer = connect(mapStateToProps, {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching, toggleFollowingProgress })(FindUsersAPIContainer)
+const FindUsersContainer = connect(mapStateToProps, {follow, unfollow, setUsers, 
+  setCurrentPage, toggleFollowingProgress, getUsers})(FindUsersAPIContainer)
 
 export default FindUsersContainer;
+
