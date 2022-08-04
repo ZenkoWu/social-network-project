@@ -1,5 +1,3 @@
-
-
 import Preloader from '../../Common/Preloader/Preloader';
 import styles from './ProfileInfo.module.css'
 
@@ -14,11 +12,27 @@ return (
     </div>
     <div>
       <img src={props.profile.photos.large} className={styles.profImg}/>
-      <div className= {styles.userName}> Karamel Min </div>
+      <div className= {styles.userName}> {props.profile.fullName} </div>
       <div className={styles.infoAboutUser}> 
-        <p>Date of Birth: 11 March <br/>
+       <p> 
+        About me: {props.profile.aboutMe} <br />
+        Статус поиска работы: {props.profile.lookingForAJobDescription} <br/>
+        <div className={styles.myContacts}>
+          My contacts: <br />
+          Facebook: {props.profile.contacts.facebook} <br />
+          vk: {props.profile.contacts.vk} <br />
+          twitter: {props.profile.contacts.twitter} <br />
+          instagram: {props.profile.contacts.instagram} <br />
+          github: {props.profile.contacts.github} <br />
+          {/* youtube: {props.profile.contacts.youtube} <br /> */}
+
+        </div>
+        
+        
+       </p>
+        {/* <p>Date of Birth: 11 March <br/>
         City: Rostov-on-Don <br/> 
-        Education: School №1 </p>
+        Education: School №1 </p> */}
        
       </div>
     </div>
@@ -29,4 +43,5 @@ return (
 export default ProfileInfo;
 
 
-// https://ya.clan.su/_ph/22/69982513.jpg
+// https://ya.clan.su/_ph/22/69982513.jpg cat
+

@@ -36,13 +36,13 @@ const FindUsers = (props) => {
 
   let pagesCount = Math.ceil(props.totalUserCount / props.pageSize)
   let pages = []
-  let count = 20
+
 
   // for(let i = 1; i<= pagesCount; i++) {
   //   pages.push(i)
   // } neeeeed
   
-  for(let i = 1; i<= 20; i++) {
+  for(let i = 1; i<= 200; i++) {
     pages.push(i)
   }
 
