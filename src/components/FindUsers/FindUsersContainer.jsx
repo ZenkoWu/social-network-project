@@ -5,7 +5,8 @@ import FindUsers from './FindUsers';
 import React, { Component } from 'react';
 import Preloader from '../Common/Preloader/Preloader';
 import { toggleFollowingProgress } from './../../redux/FindUsersReducer';
-
+import { compose } from 'redux';
+import withAuthRedirect from './../../hoc/withAuthRedirect';
 
 
 
@@ -74,8 +75,9 @@ const mapStateToProps = (state) => {
 //     }
 // }
 
-const FindUsersContainer = connect(mapStateToProps, {follow, unfollow, setUsers, 
-  setCurrentPage, toggleFollowingProgress, getUsers})(FindUsersAPIContainer)
+const FindUsersContainer = compose(withAuthRedirect, connect(mapStateToProps, {follow, unfollow, setUsers, 
+  setCurrentPage, toggleFollowingProgress, getUsers}))(FindUsersAPIContainer)
 
 export default FindUsersContainer;
 
+// 
