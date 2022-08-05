@@ -23,11 +23,17 @@ export const UsersAPI = {
     
      unfollow (userId) {
         return Instance.delete(`follow/${userId}`)
+    },
+
+    getProfile(userId) {
+        return Instance.get(`profile/`+ userId)
     }
-    
-    
-
-
 }
 
+
+export const authAPI = {
+    getAuthMe () {
+        return Instance.get('auth/me')
+    }
+}
 

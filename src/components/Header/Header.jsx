@@ -7,7 +7,7 @@ const Header = (props) => {
       <div className={styles.header}> 
         <img src={logo} style={{width: '40px', margin: '5px', backgroundColor: 'rgb(233 114 82)'}}/>
         <div className={styles.loginBlock}>
-          {props.isAuth ? props.login:  <NavLink to='/prof' >Sign in</NavLink>
+          {props.isAuth ? props.login:  <NavLink to='/login'style = {{color: 'white', textDecoration: 'none'}}>Login</NavLink>
           }
           </div>
   

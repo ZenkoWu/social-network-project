@@ -4,6 +4,7 @@ import styles from './FindUsers.module.css'
 import User from "./User";
 import * as axios from "axios";
 import { UsersAPI } from '../../api/API';
+import photoOfUser from '../../img/avatarOfUserDefault.png'
 
 
 
@@ -30,9 +31,9 @@ const FindUsers = (props) => {
         <div>
           <div>
             <NavLink to={'/profile/' + user.id}>
-            <img src={user.photos.large? user.photos.large: UserImg }
+            <img src={user.photos.large? user.photos.large: photoOfUser }
             // className={styles.userImg} 
-            style={{width: '120px'}}/>
+            style={{width: '120px', borderRadius: '50%'}}/>
             </NavLink>
             <div> 
               {user.followed ? 

@@ -1,5 +1,6 @@
 import Preloader from '../../Common/Preloader/Preloader';
 import styles from './ProfileInfo.module.css'
+import photoOfUser from '../../../img/avatarOfUserDefault.png'
 
 const ProfileInfo = (props) => {
   if(!props.profile) {
@@ -11,7 +12,7 @@ return (
       <img src='https://sun9-67.userapi.com/c844721/v844721600/12813f/IOTsEqFrmZY.jpg' className={styles.backgroundImg}/>
     </div>
     <div>
-      <img src={props.profile.photos.large} className={styles.profImg}/>
+      <img src={props.profile.photos.large ? props.profile.photos.large : photoOfUser } className={styles.profImg}/>
       <div className= {styles.userName}> {props.profile.fullName} </div>
       <div className={styles.infoAboutUser}> 
        <p> 

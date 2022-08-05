@@ -8,6 +8,7 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import FindUsersContainer from './components/FindUsers/FindUsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
+import Login from './components/Login/Login';
 
 function App(props) {
 
@@ -25,6 +26,7 @@ function App(props) {
       <Route path="/music" element = {<Music/>}/>
       <Route path="/settings" element = {<Settings/>}/>
       <Route path="/findUsers" element = {<FindUsersContainer/>}/>
+      <Route path="/login" element = {<Login/>}/>
      </Routes>
      </div>
    </div>
