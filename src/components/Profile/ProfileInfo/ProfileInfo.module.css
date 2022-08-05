@@ -1,7 +1,7 @@
 
   
   .profImg {
-    height: 200px;
+    height: 190px;
     width: 200px;
     float: left;
     margin-right: 10px;
@@ -17,8 +17,9 @@
 .userName {
   padding-top: 10px;
   font: 500 24px  Arial;
+  color: rgb(218, 61, 61)
 }
 
 /* .infoAboutUser  {
-
+  color:white
 } */

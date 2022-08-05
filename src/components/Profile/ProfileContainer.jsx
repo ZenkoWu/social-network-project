@@ -2,7 +2,7 @@ import * as axios from 'axios';
 import  React, {Component } from 'react';
 import { connect } from 'react-redux';
 import Profile from './Profile';
-import { getUserProfile } from './../../redux/ProfileReducer';
+import { getUserProfile, updateStatus, getStatus  } from './../../redux/ProfileReducer';
 import {
   Navigate,
   useLocation,
@@ -22,13 +22,15 @@ class ProfileContainer extends React.Component {
       userId = 25204;
     }
     this.props.getUserProfile(userId)
+    this.props.getStatus(userId)
+    
     
   }
 
   render() {
     
     return (
-      <Profile {...this.props} />
+      <Profile {...this.props} updateStatus = {this.props.updateStatus} status = {this.props.status} />
     )
   }
 
@@ -38,6 +40,7 @@ class ProfileContainer extends React.Component {
 const mapStateToProps =(state) => {
   return {
     profile: state.profilePage.profile,
+    status: state.profilePage.status
   }
  
 }
@@ -59,6 +62,6 @@ function withRouter(Component) {
   return ComponentWithRouterProp;
 }
  
-export default  compose(connect(mapStateToProps, {getUserProfile}), withRouter, withAuthRedirect)(ProfileContainer)
+export default  compose(connect(mapStateToProps, {getUserProfile, getStatus, updateStatus}), withRouter, withAuthRedirect)(ProfileContainer)
 
  
