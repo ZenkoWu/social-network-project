@@ -45,12 +45,16 @@ const store = {
         },
   _rerenderEntireTreeInState() {
   },
+  //два приватных свойства
 
   getState() {
     return this._state;
   },
-
-  // addPost() {
+  subscribe(observer) {
+    this._rerenderEntireTreeInState = observer;
+  },
+  // два метода которые мы можем вызывать извне
+  // _addPost() {
   //   let newPost = {
   //     id: 5, 
   //     text: this._state.profilePage.newPostText, 
@@ -62,14 +66,12 @@ const store = {
   //   this._rerenderEntireTreeInState(this._state)
   // },
   
-  //  updateNewPostText(newText) {
+  //  _updateNewPostText(newText) {
   //   this._state.profilePage.newPostText = newText 
   //   this._rerenderEntireTreeInState(this._state)
   // },
   
-  subscribe(observer) {
-    this._rerenderEntireTreeInState = observer;
-  },
+//  приватные методы которые мы можем вызывать в зависимости от типа экшена который передается диспатч-у при вызове
 
   dispatch(action) {
     this._state.profilePage = ProfileReducer(this._state.profilePage, action)
@@ -77,6 +79,7 @@ const store = {
     this._rerenderEntireTreeInState(this._state)
     
     // if (action.type ===  ADD_POST) {
+        //  addPost() 
     //   let newPost = {
     //     id: 5, 
     //     text: this._state.profilePage.newPostText, 
@@ -87,6 +90,7 @@ const store = {
     //   this._rerenderEntireTreeInState(this._state)
 
     // } else if (action.type === UPDATE_NEW_POST_TEXT) {
+      // updateNewPostText(action.newText)
     //   this._state.profilePage.newPostText = action.newText 
     //   this._rerenderEntireTreeInState(this._state)
 

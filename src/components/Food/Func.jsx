@@ -1,0 +1,1 @@
+export let center = (x = 'center', y = 'center') => (" d-flex justify-content-" + x + " align-items-" + y + " ")

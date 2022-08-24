@@ -23,14 +23,13 @@ class ProfileContainer extends React.Component {
     }
     this.props.getUserProfile(userId)
     this.props.getStatus(userId)
-    
+     
     
   }
 
   render() {
-    
     return (
-      <Profile {...this.props} updateStatus = {this.props.updateStatus} status = {this.props.status} />
+      <Profile {...this.props} />
     )
   }
 
@@ -62,6 +61,9 @@ function withRouter(Component) {
   return ComponentWithRouterProp;
 }
  
-export default  compose(connect(mapStateToProps, {getUserProfile, getStatus, updateStatus}), withRouter, withAuthRedirect)(ProfileContainer)
+export default  compose(connect(mapStateToProps, {getUserProfile, getStatus, updateStatus}), 
+withRouter, 
+// withAuthRedirect
+)(ProfileContainer)
 
  

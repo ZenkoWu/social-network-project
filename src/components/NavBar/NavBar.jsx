@@ -22,6 +22,13 @@ const NavBar = () => {
         <div> 
           <NavLink to='/findUsers'  className={link => link.isActive ? styles.active : styles.notActive}>Find users</NavLink>
         </div>
+        <div> 
+          <NavLink to='/games'  className={link => link.isActive ? styles.active : styles.notActive}>Little Games</NavLink>
+        </div>
+        <div> 
+          <NavLink to='/food' className={link => link.isActive ? styles.active : styles.notActive}>Food</NavLink>
+        </div>
+        
       </nav>
     )
 }

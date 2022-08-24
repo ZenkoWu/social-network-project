@@ -5,20 +5,15 @@ const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET-USERS'
 const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE'
 const SET_TOTAL_USERS_COUNT = 'SET-TOTAL-USERS-COUNT'
-const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING'
+const TOGGLE_IS_LOADING = 'TOGGLE-IS-LOADING'
 const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE-IS-FOLLOWING-PROGRESS'
 
 const initialState = {
-  users: [
-    // {id: 1, photo:'https://coolsen.ru/wp-content/uploads/2021/06/81-6.jpg', followed: true, fullName: 'Ilya L.', status: 'I like football!!', location: {country: 'Russia' , city: 'Rostov-on-Don'}},
-    // {id: 2,  photo:'', followed: true,  fullName: 'Ivan C.', status: 'Im so tired', location: {country: 'Russia' , city: 'Novocherkask'}},
-    // {id: 3,  photo:'', followed: false, fullName: 'Victor P.', status: 'I speak French', location: {country: 'Salvador' , city: 'MiniCountry'}},
-    // {id: 4,  photo:'', followed: false, fullName: 'Susha E.', status: 'Im so pretty', location: {country: 'Belarus' , city: 'Minsk'}},
-],
-  pageSize: 4,
-  totalUserCount: 0,
+  users: [],
+  pageSize: 16,
+  totalItemsCount: 0,
   currentPage: 1,
-  isFetching: false,
+  isLoading: false,
   followingInProgress: []
 
 }
@@ -54,10 +49,10 @@ const FindUsersReducer = (state = initialState, action) => {
     return {...state, currentPage: action.currentPage}
 
    case SET_TOTAL_USERS_COUNT: 
-    return {...state, totalUserCount: action.totalCount}
+    return {...state, totalItemsCount: action.totalCount}
 
-   case TOGGLE_IS_FETCHING: 
-     return {...state, isFetching: action.isFetching}
+   case TOGGLE_IS_LOADING: 
+     return {...state, isLoading: action.isLoading}
 
      case TOGGLE_IS_FOLLOWING_PROGRESS : 
      return {...state, 
@@ -70,7 +65,7 @@ const FindUsersReducer = (state = initialState, action) => {
 }
 }
 
-
+// Action Creators
 
 export const followSuccess = (userId)=> {
     return { 
@@ -102,16 +97,16 @@ export const setCurrentPage = (currentPage) => {
 }
 
 export const setTotalUsersCount = (totalCount) => {
-  return { 
+  return {  
       type: SET_TOTAL_USERS_COUNT,
       totalCount
     
   }
 }
-export const toggleIsFetching = (isFetching) => {
+export const toggleIsLoading = (isLoading) => {
   return { 
-      type:TOGGLE_IS_FETCHING,
-      isFetching
+      type:TOGGLE_IS_LOADING,
+      isLoading
     
   }
 }
@@ -124,16 +119,20 @@ export const toggleFollowingProgress = (isFetching, userId)=> {
   }
 }
 
+// Thunks
+
 export const getUsers = (currentPage, pageSize) => {
   return (dispatch) => {
-    (dispatch(setCurrentPage(currentPage)))
-  dispatch(toggleIsFetching(true))
-    UsersAPI.getUsers(currentPage, pageSize)
+    (
+     dispatch(setCurrentPage(currentPage)))
+     dispatch(toggleIsLoading(true))
+     UsersAPI.getUsers(currentPage, pageSize)
     .then(data => {
-     dispatch(toggleIsFetching(false))
+     dispatch(toggleIsLoading(false))
      dispatch(setUsers( data.items))
      dispatch(setTotalUsersCount(data.totalCount))
-    })
+    }
+    )
   }
   
 }

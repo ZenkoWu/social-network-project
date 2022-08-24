@@ -1,0 +1,43 @@
+
+.selectedSong {
+    width: 230px;
+    text-align: center;
+    margin: 5px;
+    
+}
+
+.selectedSong:hover {
+    border: 2px solid rgb(8, 155, 223);
+    
+
+}
+
+.imgOfSelectedSong {
+   width: 200px;
+   height: 200px;
+   margin: 10px auto;
+ 
+    
+
+}
+
+.imgOfSelectedSong img {
+    width:100%;
+
+    
+}
+
+
+
+
+.selectedSong img:hover {
+
+    
+}
+
+.descriptionOfSelectedSong a{
+    text-decoration: none;
+    color:rgb(58, 55, 31)
+}
+
+

@@ -1,6 +1,7 @@
 import styles from './MyPosts.module.css'
 import OnePost from './OnePost/OnePost';
 import { useRef } from 'react';
+import Button from '../../Button/Button';
 
 const MyPosts = (props) => {
 
@@ -26,7 +27,8 @@ const MyPosts = (props) => {
           <textarea placeholder='My posts...' ref={newPostElement} value = {props.newPostText} onChange={onPostChange}/>
         </div>
         <div> 
-          <button onClick={onAddPost}>Add Post</button>
+          <Button func = {onAddPost} task = 'Add Post'/>
+          {/* <button onClick={onAddPost}>Add Post</button> */}
           </div>
           {postElement}
   

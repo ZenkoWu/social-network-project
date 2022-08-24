@@ -2,6 +2,7 @@ import styles from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem';
 import Message from './MessageOfUser/Message';
 import { useRef } from 'react';
+import Button from '../Button/Button';
 
 
 
@@ -17,11 +18,10 @@ const Dialogs = (props) => {
     props.onSendMessage()
   }  
 
-  let onChangeMessage = function() {
-    let text = newMessageElement.current.value
+  let onChangeMessage = function(e) {
+    let text = e.target.value
     props.onChangeMessage(text)
   }
-
 
 
 
@@ -30,11 +30,15 @@ const Dialogs = (props) => {
     <div className= {styles.dialogs}>
       <div className= {styles.dialogItems}>
         {dialogElements}
+        {}
       </div>
       <div className={styles.messages}>
         {messageElements}
-        <div><textarea placeholder='Enter text...' ref={newMessageElement} onChange={onChangeMessage} value={props.newMessageText} className={styles.textarea}/></div>
-        <div><button onClick={sendMessage}>Send message</button></div>
+        <div><textarea placeholder='Enter text...' onChange={onChangeMessage} value={props.newMessageText} className={styles.textarea}/></div>
+        <div>
+          {/* <button onClick={sendMessage}>Send message</button> */}
+        <Button func = {sendMessage} task='Send message'/></div>
+        
       </div>
       
     </div>

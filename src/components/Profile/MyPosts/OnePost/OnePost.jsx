@@ -5,7 +5,8 @@ const OnePost = (props) => {
     <div>
         <div className={styles.paddingImg}>
         <img src="https://pixelbox.ru/wp-content/uploads/2021/05/ava-vk-animal-91.jpg" className= {styles.imgPost} />
-      {props.text}
+        <span>{props.text}</span>
+      
       <div className={styles.likes}>
       {props.likesCount} likes
       </div>
@@ -14,4 +15,4 @@ const OnePost = (props) => {
   )
 }
 
-export default OnePost;
+export default OnePost; 

@@ -14,7 +14,9 @@ const withAuthRedirect=(Component)=>{
     render() {
         if (!this.props.isAuth) {
                 return <Navigate to={'/login'}/>
-              }
+        }
+              
+        
       return <Component {...this.props}/>
     }
   }

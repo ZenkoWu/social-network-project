@@ -8,10 +8,10 @@ const SET_STATUS = 'SET-STATUS'
 
 let initialState = {
   postData: [
-    { id: 1, text: 'something', likesCount: '1234' },
-    { id: 2, text: 'about', likesCount: '345' },
-    { id: 3, text: 'happiness', likesCount: '876' },
-    { id: 4, text: 'tell', likesCount: '234' },
+    { id: 1, text: 'Hey! What is new?', likesCount: '1234' },
+    { id: 2, text: 'Tell me about your day', likesCount: '345' },
+    { id: 3, text: 'Tomorrow i will go to a gym', likesCount: '876' },
+    { id: 4, text: 'Can u recommend me an interesting films?', likesCount: '234' },
   ],
   newPostText: '',
   profile: null,
