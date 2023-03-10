@@ -26,7 +26,7 @@ export default function AllFoodList() {
               </NavLink>
             </div>
           </div>
-        </в>  
+        </div>  
         )}
     <Outlet/>
     </div>
