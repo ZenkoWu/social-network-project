@@ -1,4 +1,3 @@
-import Preloader from '../../Common/Preloader/Preloader';
 import styles from './ProfileInfo.module.css'
 import defaultAvatar from '../../../img/avatarOfUserDefault.png'
 import ProfileStatus from './ProfileStatus';
@@ -17,22 +16,18 @@ return (
         About me: {props.profile.aboutMe} <br />
         <ProfileStatus status= {props.status} updateStatus ={props.updateStatus}/>
         Статус поиска работы: {props.profile.lookingForAJobDescription} <br/>
-        <div className={styles.myContacts}>
+        <div className={'d-flex align-items-start'}>
           My contacts: <br />
           Facebook: {props.profile.contacts.facebook} <br />
           vk: {props.profile.contacts.vk} <br />
           twitter: {props.profile.contacts.twitter} <br />
           instagram: {props.profile.contacts.instagram} <br />
-          github: {props.profile.contacts.github} <br />
-          {/* youtube: {props.profile.contacts.youtube} <br /> */}
+          github: {props.profile.contacts.github} 
 
         </div>
         
         
        </p>
-        {/* <p>Date of Birth: 11 March <br/>
-        City: Rostov-on-Don <br/> 
-        Education: School №1 </p> */}
        
       </div>
     </div>
@@ -43,5 +38,4 @@ return (
 export default ProfileInfo;
 
 
-// https://ya.clan.su/_ph/22/69982513.jpg cat
 

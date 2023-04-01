@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/redux-store';
-// import { Provider } from './redux/StoreContext';
 import { Provider } from 'react-redux';
 
 
@@ -17,9 +16,7 @@ root.render(
   </React.StrictMode>
 );
 
-
-
 reportWebVitals();
 
 
-// ReactDOM.render(<App/>, document.getElementById('root'))
+ReactDOM.render(<App/>, document.getElementById('root'))

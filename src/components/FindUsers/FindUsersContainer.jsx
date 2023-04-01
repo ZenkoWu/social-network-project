@@ -21,17 +21,18 @@ class FindUsersAPIContainer extends React.Component {
   render () {
     return (
       <>
-      {this.props.isLoading ? <Preloader/> : 
+      {this.props.isLoading ? 
+        <Preloader/> : 
       <FindUsers 
       {...this.props}
       // totalItemsCount={this.props.totalItemsCount} 
       // pageSize = {this.props.pageSize}
       // currentPage = {this.props.currentPage}
-      // onPageChange = {this.onPageChange}
+      onPageChange = {this.onPageChange}
       // users = {this.props.users}
-      // follow = {this.props.follow}
-      // unfollow ={this.props.unfollow}
-      // followingInProgress = {this.props.followingInProgress}
+      follow = {this.props.follow}
+      unfollow ={this.props.unfollow}
+      followingInProgress = {this.props.followingInProgress}
       // getUsers ={this.props.getUsers}
       />
     }

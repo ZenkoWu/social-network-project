@@ -7,9 +7,10 @@
   'n c';
   grid-gap: 10px;
   margin: 0 auto;
-  width: 1200px;
-  height: 700px;
-  margin-bottom: 20px;
+  /* width: 1200px;
+  height: 700px; */
+  /* margin: 2px; */
+  margin-bottom: 10px;
 }
 
 .contentStyles {

@@ -4,13 +4,9 @@
     height: 50px;
     }
 
-    /* .header img {
-        height: 40px;
-      } */
 
 .loginBlock{
   display: block;
-  /* margin-left: auto; */
   float: right;
   margin-top: 10px;
   height: 100px;

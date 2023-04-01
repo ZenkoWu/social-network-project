@@ -20,7 +20,7 @@ import Erorr from './components/Food/Erorr';
 import Smooth from './components/Food/Smooth';
 
 
-function App(props) {
+function App() {
   return (
     <BrowserRouter>
       <div className='wrapper'>

@@ -13,23 +13,35 @@ const User = (props) => {
              className={styles.photoOfUser}/>
           </NavLink>
           </div>
-          <div st>
-          {props.name} //
-           id: {props.id}
-          {/* {props.status}
+          <div className='col  fw-bold'>
+            <div className='row pb-1 justify-content-center'>
+                {props.name}
+            </div>
+           <div className='row pb-1 justify-content-center'>
+            {'id: '+ props.id}
+            </div>
+            {/* {props.status}
           {user.location.country}
           {user.location.country} */}
-        </div>
+          </div>
           <div> 
-            {props.followed ? 
-            <button class="btn btn-secondary" disabled={props.followingInProgress.includes(props.id)} 
-              onClick={() => {props.unfollow(props.id)}} >
-              Unfollow
-            </button> 
-            : <button class="btn btn-primary"  disabled={props.followingInProgress.some(id => id === props.id)} onClick={() => {
-              props.follow(props.id)}}>
-              Follow
-            </button>
+            {
+            props.followed ? 
+                <button 
+                    className="btn btn-secondary" 
+                    disabled={props.followingInProgress.includes(props.id)} 
+                    onClick={() => {props.unfollow(props.id)}} 
+                >
+                    {'Unfollow'}
+                </button> 
+                : 
+                <button 
+                    className="btn btn-primary"  
+                    disabled={props.followingInProgress.some(id => id === props.id)} 
+                    onClick={() => {props.follow(props.id)}}
+                >
+                    {'Follow'}
+                </button>
             }
           </div>
           </div>
