@@ -1,13 +1,13 @@
 .header {
     background-color: #E97252;
-    grid-area: h;
+    /* grid-area: h; */
     height: 50px;
     }
 
 
 .loginBlock{
   display: block;
-  float: right;
+  margin-left: auto;
   margin-top: 10px;
   height: 100px;
 	width: 100px;

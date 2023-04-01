@@ -23,10 +23,11 @@ import Smooth from './components/Food/Smooth';
 function App() {
   return (
     <BrowserRouter>
-      <div className='wrapper'>
-        <HeaderContainer />
+     <HeaderContainer />
+      <div className=' row'>
+       
         <NavBar />
-        <div className='contentStyles'>
+        <div className='contentStyles col'>
           <Routes>
             <Route path="/" element = {<ProfileContainer/>}/>
             <Route path="/dialogs/*" element={<DialogsContainer />} />

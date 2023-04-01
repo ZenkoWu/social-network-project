@@ -1,20 +1,20 @@
 .wrapper {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 2fr 10fr;
   grid-template-rows:  50px 1fr;
   grid-template-areas: 
   'h h'
   'n c';
   grid-gap: 10px;
-  margin: 0 auto;
+  margin: 0 auto; */
   /* width: 1200px;
   height: 700px; */
-  /* margin: 2px; */
-  margin-bottom: 10px;
+  /* margin: 2px;
+  margin-bottom: 10px; */
 }
 
 .contentStyles {
-    grid-area: c;
+    /* grid-area: c; */
     background-color: #8FC4A6;
 }
  
