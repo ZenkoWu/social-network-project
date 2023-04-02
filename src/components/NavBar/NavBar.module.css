@@ -1,18 +1,18 @@
-/* .navBar {
-    grid-area: n;
-    background-color: #1793AB;
-    padding: 20px;
+  .navBar {
+      height: 100%;
+      background-color: #1793AB;
+      padding: 20px;
+      
+    }
     
-  }
-   
-  .notActive {
-    color: white;
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-  .active {
-    color: rgb(155, 55, 123);
-    font-weight: 600;
-    text-decoration: none;
-  } */
+    .notActive {
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    
+    .active {
+      color: rgb(155, 55, 123);
+      font-weight: 600;
+      text-decoration: none;
+    }

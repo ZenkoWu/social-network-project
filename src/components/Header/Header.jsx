@@ -1,16 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css'
 import logo from '../../img/2319663.png'
-import NavbarItems from '../NavBar/NavbarItems/NavbarItems.tsx';
-const menuItems = [
-    {
-      route: '/profile',
-      title:'profile',
-      key: '1',
-
-    
-    }
-  ]
+import { menuItems } from '../../constans/constans';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 const Header = (props) => {
     return (
@@ -25,8 +17,10 @@ const Header = (props) => {
                     style={{width: '40px', margin: '5px', backgroundColor: 'rgb(233 114 82)'}}
                 />
             </NavLink>
-            <NavbarItems menuConfig={menuItems} isMenu={true}/>
-            </div>
+
+            <BurgerMenu menuConfig={menuItems}/>
+
+        </div>
             <div className={styles.loginBlock}>
                 {
                     props.isAuth ? 

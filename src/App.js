@@ -10,24 +10,24 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
 import LittleGames from './components/Games/LittleGames';
-import Food from './components/Food/Food';
-import Lunch from './components/Food/Lunch';
-import Dinner from './components/Food/Dinner';
-import Breakfast from './components/Food/Breakfast';
-import Meal from './components/Food/Meal';
-import AllFoodList from './components/Food/AllFoodList';
-import Erorr from './components/Food/Erorr';
-import Smooth from './components/Food/Smooth';
+// import Food from './components/Food/Food';
+// import Lunch from './components/Food/Lunch';
+// import Dinner from './components/Food/Dinner';
+// import Breakfast from './components/Food/Breakfast';
+// import Meal from './components/Food/Meal';
+// import AllFoodList from './components/Food/AllFoodList';
+// import Erorr from './components/Food/Erorr';
+// import Smooth from './components/Food/Smooth';
 
 
 function App() {
+  
   return (
     <BrowserRouter>
      <HeaderContainer />
-      <div className=' row'>
-       
+      <div className='row p-0 wrapper'>
         <NavBar />
-        <div className='contentStyles col'>
+        <div className='contentStyles col p-0 m-0 pb-5'>
           <Routes>
             <Route path="/" element = {<ProfileContainer/>}/>
             <Route path="/dialogs/*" element={<DialogsContainer />} />
@@ -39,13 +39,13 @@ function App() {
             <Route path="/findUsers" element={<FindUsersContainer />} />
             <Route path="/login" element={<Login />} />
             <Route path="/games" element={<LittleGames />} />
-            <Route path="food" element={<Food/>}>
+            {/* <Route path="food" element={<Food/>}>
               <Route path="" element={<AllFoodList />}/>
               <Route path="breakfast" element={<Breakfast />}/>
               <Route path="smooth" element={<Smooth />}/>
               <Route path="lunch" element={<Lunch />}/>
               <Route path="dinner" element={<Dinner />}/>
-            </Route>
+            </Route> */}
           </Routes>
         </div>
       </div>
