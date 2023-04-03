@@ -1,4 +1,4 @@
-<img align="right" width="280" height="200" src="readMeImges/2023-04-03_17-32-02.png" alt="social-net">
+<!-- <img align="right" width="280" height="200" src="readMeImges/2023-04-03_17-32-02.png" alt="social-net"> -->
 
 # Social-network
 Проект представляет собой небольшую соц. сеть. Пока приложение находится в разработке, но, возможно, вам будет интересен его функционал, например появление 
@@ -22,8 +22,8 @@
 
 2.При уменьшении экрана меню сворачивается в бургер-меню
 <img align="center" src="readMeImges/2023-04-03_17-37-10.png" alt="navbar">
-<img align="left" src="readMeImges/2023-04-03_17-37-32.png" alt="burger">
-<img align="right" src="readMeImges/2023-04-03_17-41-25.png" alt="burger-menu">
+<img align="left" height='300px' src="readMeImges/2023-04-03_17-37-32.png" alt="burger">
+<img align="right"  height='300px' src="readMeImges/2023-04-03_17-41-25.png" alt="burger-menu">
 
 
 3.Вы можете видеть других зарегестрированных пользователей и подписываться на них
