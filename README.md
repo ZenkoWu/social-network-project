@@ -27,7 +27,7 @@
 
 
 
-3.Вы можете видеть других зарегестрированных пользователей и подписываться на них
-<img align="center" src="readMeImges/b6afc24a-74ee-4f9c-9c91-1f4a4e4d438b_Trim(1).gif" alt="users">
+<!-- 3.Вы можете видеть других зарегестрированных пользователей и подписываться на них -->
+<!-- <img align="center" src="readMeImges/b6afc24a-74ee-4f9c-9c91-1f4a4e4d438b_Trim(1).gif" alt="users"> -->
 
 
