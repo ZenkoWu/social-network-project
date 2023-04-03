@@ -22,12 +22,15 @@
 
 2.При уменьшении экрана меню сворачивается в бургер-меню
 <img align="center"  height='550px' src="readMeImges/2023-04-03_17-37-10.png" alt="navbar"/>
-<img align="left" height='350px' src="readMeImges/2023-04-03_17-37-32.png" alt="burger"/>
-<img align="right"  height='350px' src="readMeImges/2023-04-03_17-41-25.png" alt="burger-menu"/>
+<img align="left" height='388px' src="readMeImges/2023-04-03_17-37-32.png" alt="burger"/>
+<img align="right"  height='388px' src="readMeImges/2023-04-03_17-41-25.png" alt="burger-menu"/> 
 
 
+Burger Menu 
 
-3.Вы можете видеть других зарегестрированных пользователей и подписываться на них
+3.Вы можете видеть других зарегестрированных пользователей и подписываться на них 
+
 <img align="center" src="readMeImges/b6afc24a-74ee-4f9c-9c91-1f4a4e4d438b_Trim (1).gif" alt="users"/>
-
+<img align="left" height='280px' src="readMeImges/2023-04-03_17-56-44.png" alt="follow"/>
+<img align="right" height='280px' src="readMeImges/2023-04-03_17-56-59.png" alt="unfollow"/>
 
