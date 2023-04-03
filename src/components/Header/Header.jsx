@@ -2,13 +2,12 @@ import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css'
 import logo from '../../img/2319663.png'
 import { menuItems } from '../../constans/constans';
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import BurgerMenu from '../BurgerMenu/BurgerMenu.tsx';
 
 const Header = (props) => {
     return (
         <div className={
-            (styles.header) +  
-            '    d-flex'
+            (styles.header) + ' d-flex'
         }> 
         <div className='d-flex'>
             <NavLink to='/profile'> 

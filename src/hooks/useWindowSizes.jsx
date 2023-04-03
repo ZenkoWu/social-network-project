@@ -10,7 +10,7 @@ export const getWindowSizes = () => ({
         || document.body.clientHeight,
 });
 
-export const useWindowSizes = (onSizesChange) => {
+ const useWindowSizes = (onSizesChange) => {
     let {width, height} = getWindowSizes();
 
     useEffect(() => {
@@ -22,3 +22,4 @@ export const useWindowSizes = (onSizesChange) => {
 
     return {width, height}
 }
+export default useWindowSizes;

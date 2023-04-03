@@ -2,7 +2,7 @@ import { Menu } from "@mui/material";
 import React, { useState, useCallback, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import './NavbarItems.css'
-import { useWindowSizes } from "../../hooks/useWindowSizes.jsx";
+import useWindowSizes from "../../../hooks/useWindowSizes";
 
 
 type TMenuItem = {
