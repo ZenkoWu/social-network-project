@@ -1,4 +1,4 @@
-<img align="right" width="280" height="280" src="readMeImges/2023-04-03_17-32-02.png" alt="social-net">
+<img align="right" width="280" height="200" src="readMeImges/2023-04-03_17-32-02.png" alt="social-net">
 
 # Social-network
 Проект представляет собой небольшую соц. сеть. Пока приложение находится в разработке, но, возможно, вам будет интересен его функционал, например появление 
