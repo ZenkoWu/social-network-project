@@ -76,7 +76,7 @@ const BurgerMenu = (props: {
                                     > 
                                         {  
                                             <div className='p-3 px-5 navbarItem fs-5'
-                                            //  onClick={closeMenu}
+                                             onClick={closeMenu}
                                              >
                                                 {title}
                                             </div>

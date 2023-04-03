@@ -1,7 +1,9 @@
 import User from "./User"
 import Paginator from './Paginator/Paginator';
+import { useEffect } from "react";
 
 const FindUsers = (props) => {
+  useEffect(()=> {document.title = 'Find users'}, [])
   return (
     <div className="container">
     <div style={{margin: '20px 0px', display:'flex', justifyContent: 'space-between'}} className='row'>

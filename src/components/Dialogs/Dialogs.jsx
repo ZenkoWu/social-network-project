@@ -1,12 +1,16 @@
 import styles from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem';
 import Message from './MessageOfUser/Message';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Button from '../Button/Button';
 
 
 
 const Dialogs = (props) => {
+
+  useEffect(()=> {
+    document.title = 'Dialogs'
+  }, [])
  
   let dialogElements = props.dialogData.map(item => <DialogItem userName = {item.userName} id ={item.id} key = {item.id} avatar = {item.avatar}/> )
 

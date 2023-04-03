@@ -28,7 +28,7 @@
 //   }
 // }
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import Song from './Songs/Song'
 import Crazy from './Two_Feet_-_Think_Im_Crazy_71135146.mp3'
 import fire from './Two_Feet_-_Fire_In_My_Head_72998827.mp3'
@@ -37,6 +37,7 @@ import nightmares from './Two_Feet_-_Nightmares_72911025.mp3'
 
 
 export default function Music() {
+  useEffect(()=> {document.title = 'Music'}, [])
   let songData = [
     {id: 1, imgSrc: 'https://avatars.yandex.net/get-music-content/3334966/4de92ddd.a.12092301-1/m1000x1000?webp=false', songSrc: `${Crazy}`, songName: "Two Feet - I think I'm Crazy"},
     {id: 2, imgSrc: 'https://avatars.yandex.net/get-music-content/2427101/e56d565b.a.13198617-1/m1000x1000?webp=false', songSrc: `${fire}`, songName: "Two Feet - Fire in my head"},

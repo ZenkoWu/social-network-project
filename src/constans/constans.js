@@ -9,11 +9,11 @@ export const menuItems = [
         title:'Messages',
         key: '2',
       },
-    {
-      route: '/news',
-      title:'News',
-      key: '3',
-    },
+    // {
+    //   route: '/news',
+    //   title:'News',
+    //   key: '3',
+    // },
     {
         route: '/music',
         title:'Music',
