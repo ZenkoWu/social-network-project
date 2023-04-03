@@ -22,8 +22,8 @@
 
 2.При уменьшении экрана меню сворачивается в бургер-меню
 <img align="center"  height='550px' src="readMeImges/2023-04-03_17-37-10.png" alt="navbar">
-<img align="left" height='400px' src="readMeImges/2023-04-03_17-37-32.png" alt="burger">
-<img align="right"  height='400px' src="readMeImges/2023-04-03_17-41-25.png" alt="burger-menu">
+<img align="left" height='350px' src="readMeImges/2023-04-03_17-37-32.png" alt="burger">
+<img align="right"  height='350px' src="readMeImges/2023-04-03_17-41-25.png" alt="burger-menu">
 
 
 
